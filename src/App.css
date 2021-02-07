@@ -1,7 +1,7 @@
 div.top-bar {
   height: 50px;
   width: 100%;
-  background-color: gray;
+  background-color: rgb(77, 77, 77);
 }
 
 div.search-view {
@@ -31,16 +31,33 @@ div.search-view {
   color: gray;
 }
 
+.filter-view {
+  display: flex;
+}
+
 div.filters {
-  background-color: lightgray;
-  width: 30%;
+  background-color: rgb(190, 190, 190);
+  width: 25%;
   height: calc(100vh - 50px);
   display: inline-block;
 }
 
 div.results {
-  width: 70%;
+  width: 75%;
   height: calc(100vh - 50px);
   display: inline-block;
-  background-color: red;
+  background-color: lightgray;
+}
+
+.header {
+  margin-left: 2rem;
+  color: rgb(77, 77, 77);
+}
+
+form {
+  margin-left: 1.5rem;
+}
+
+.input-button-container {
+  margin-top: 1rem;
 }
