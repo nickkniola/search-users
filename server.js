@@ -16,9 +16,7 @@ const userData = [
 ];
 
 app.post('/search', function (req, res) {
-  console.log(req.body);
-  const filteredUsers = userData.filter(user => user.name.includes(req.body.search))
-  console.log(filteredUsers)
+  const filteredUsers = userData.filter(user => user.name.includes(req.body.search));
   return res.json(filteredUsers);
 });
 
