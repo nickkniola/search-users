@@ -7,7 +7,6 @@ function App() {
   const [view, setView] = useState("search-view");
   const [search, setSearch] = useState();
   const [category, setCategory] = useState("name");
-  // const [filter, setFilter] = useState("name");
   const [searchResult, setSearchResult] = useState();
   const [sortFunction, setSortFunction] = useState();
 
@@ -15,7 +14,6 @@ function App() {
 
   const handleFilter = event => {
     event.preventDefault();
-    // setFilter(category);
     if (category === "name") {
       setSortFunction(() => nameCompare);
     } else if (category === "age") {
@@ -71,6 +69,14 @@ function App() {
   return (
     <div className="App">
       <div className="top-bar">
+        {
+          view === "filter-view"
+          ? <div>
+              <input className="search-input" type="text" placeholder="Search" required size="30" onChange={onSearchChange}/>
+              <i className="fas fa-search fa-lg" onClick={handleSearch}></i>
+            </div>
+          : <></>
+        }
       </div>
       { view === "search-view"
         ? <div className="search-view">
@@ -96,14 +102,14 @@ function App() {
                   <label htmlFor="job">Job Title</label>
                 </div>
                 <div className="input-button-container">
-                  <input type="submit" value="Apply"/>
+                  <input className="apply-button" type="submit" value="Apply"/>
                 </div>
               </form>
             </div>
             <div className="results">
               <h2 className="header">Results</h2>
               {
-                searchResult ?
+                searchResult && searchResult.length > 0 ?
                 <div>
                   {searchResult.sort(sortFunction).map((user, index) => {
                     return (
@@ -117,6 +123,7 @@ function App() {
                   }
                 </div>
                 : <>
+                    <h4 className="header">No users can be found.</h4>
                   </>
               }
             </div>
