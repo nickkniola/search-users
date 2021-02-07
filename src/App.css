@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div.top-bar {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(77, 77, 77);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+div.search-view {
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(218, 218, 218);
+}
+
+.search-input {
+  margin-right: 1rem;
+  height: 35px;
+  outline: none;
+  border: none;
+  border-radius: 35px;
+  padding: 8px 30px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.search-input::placeholder {
+  color: rgb(160, 160, 160);
+}
+
+.fa-search {
+  color: gray;
+}
+
+.fa-search:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.filter-view {
+  display: flex;
+}
+
+div.filters {
+  background-color: rgb(190, 190, 190);
+  width: 25%;
+  height: calc(100vh - 70px);
+  display: inline-block;
+}
+
+div.results {
+  width: 75%;
+  height: calc(100vh - 70px);
+  display: inline-block;
+  background-color: lightgray;
+}
+
+.header {
+  margin-left: 2rem;
+  color: rgb(77, 77, 77);
+}
+
+form {
+  margin-left: 1.5rem;
+}
+
+label {
+  font-size: 16px;
+}
+
+.input-button-container {
+  margin-top: 1rem;
+}
+
+.users-result {
+  margin-left: 2rem;
+}
+
+input.apply-button {
+  background-color: rgb(77, 77, 77);
+  border: none;
   color: white;
+  padding: 10px;
+  width: 80px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 40px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input.apply-button:hover {
+  cursor: pointer;
+  color: rgb(201, 201, 201);
 }
