@@ -17,15 +17,15 @@ Search users by name, then filter them based on name, age, and job title.
     npm install
     ```
 
-4. Start frontend
+4. Start frontend.
 
     ```shell
-    npm run build
+    npm run start
     ```
-4. Start backend
+4. Start backend in a different terminal.
 
     ```shell
     node server.js
     ```
 
-5. Visit http://localhost:3000 in browser
+5. Visit http://localhost:3000 in browser.
