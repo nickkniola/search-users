@@ -17,11 +17,11 @@ function App() {
     event.preventDefault();
     // setFilter(category);
     if (category === "name") {
-      setSortFunction(nameCompare);
+      setSortFunction(() => nameCompare);
     } else if (category === "age") {
-      setSortFunction(ageCompare);
+      setSortFunction(() => ageCompare);
     } else if (category === "job") {
-      setSortFunction(jobCompare);
+      setSortFunction(() => jobCompare);
     }
   }
 
@@ -95,7 +95,7 @@ function App() {
                   <input type="radio" id="job" name="job" value="job" checked={category === "job"} onChange={onCategoryChange}/>
                   <label htmlFor="job">Job Title</label>
                 </div>
-                <div classNam="input-button-container">
+                <div className="input-button-container">
                   <input type="submit" value="Apply"/>
                 </div>
               </form>
@@ -105,9 +105,9 @@ function App() {
               {
                 searchResult ?
                 <div>
-                  {searchResult.sort(sortFunction).map(user => {
+                  {searchResult.sort(sortFunction).map((user, index) => {
                     return (
-                      <div className="users-result">
+                      <div className="users-result" key={index}>
                         <h3>Name: {user.name}</h3>
                         <p>Age: {user.age}</p>
                         <p>Job Title: {user.job}</p>

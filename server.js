@@ -5,19 +5,19 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
 const userData = [
-  { name: "Alex", age: "24", job: "Human Resources" },
-  { name: "Alex", age: "56", job: "President" },
-  { name: "Cody", age: "33", job: "IT" },
-  { name: "Joe", age: "45", job: "Accountant" },
-  { name: "Joe", age: "21", job: "Accountant" },
-  { name: "Sarah", age: "65", job: "Chief Financial Officer" },
-  { name: "Sarah", age: "24", job: "Human Resources" },
-  { name: "Sarah", age: "72", job: "IT" }
+  { name: "Alex Smith", age: "56", job: "Human Resources" },
+  { name: "Alex Jones", age: "41", job: "President" },
+  { name: "Joe Miller", age: "33", job: "IT" },
+  { name: "Joe Stephens", age: "45", job: "Accountant" },
+  { name: "Joe Lewin", age: "21", job: "Accountant" },
+  { name: "Sarah Louis", age: "65", job: "Chief Financial Officer" },
+  { name: "Sarah Baskins", age: "24", job: "Human Resources" },
+  { name: "Sarah Sanchez", age: "72", job: "IT" }
 ];
 
 app.post('/search', function (req, res) {
   console.log(req.body);
-  const filteredUsers = userData.filter(user => user.name === req.body.search)
+  const filteredUsers = userData.filter(user => user.name.includes(req.body.search))
   console.log(filteredUsers)
   return res.json(filteredUsers);
 });
